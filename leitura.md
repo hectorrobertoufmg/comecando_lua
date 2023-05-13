@@ -28,5 +28,12 @@ for i=1, #copas do
     print(copas[i])
 end
 ~~~
+---
+Também podemos printar valores em par, cujo um é o indice e o outro o valor. Fazemos isso utilizando uma função chamada ipairs(aquivem o arry):
 
+~~~
+for indice, valor in ipairs(copas) do
+    print(indice, valor)
+end
+~~~
 
