@@ -1,17 +1,12 @@
-copas = 
+poorCountries = 
 {
-    [58] = "Suecia",
-    [62] = "Chile",
-    [70] = "Mexico",
-    [94] = "EUA",
-    [02] = "Japao"
-
+ [1] =  "Burundi", 
+ [2] =  "Sudão do Sul", 
+ [3] =  "Malawi", 
+ [4] =  "República Centro-Africana", 
+ [5] =  "Níger"
 }
 
-for key, nome in pairs(copas) do
-    if key == 02 then
-        print("2022", nome)
-        break
-    end
-    print(key, nome)
+for k, v in pairs(poorCountries) do
+    print(k,":", v)
 end
