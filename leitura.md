@@ -92,7 +92,7 @@ E são criados assim:
     lista[2] = "maçã"
     lista[3] = "laranja"
 
-    -- acessando um elemento pelo índice
+    -- acessando um elemento pela key 
     print(lista[1]) -- saída: banana
 
 ~~~
@@ -100,17 +100,75 @@ E são criados assim:
 Veja que no exemplo anterior, estamos chamandos os valores por meio das chaves. Neste caso, as chaves estão sendo representadas por números, mas poderiam ser strings também!
 
 ~~~
-info = 
-{
-    --- Cria dicionários cujas chaves são "nome", "endereço" e "Pais"
-    ["nome"] = "Hector Roberto",
-    ["Rua"] = "Teneten Ricardo Guimarães",
-    ["Pais"] = "Brasil"
-}
+    info = 
+    {
+        --- Cria dicionários cujas chaves são "nome", "endereço" e "Pais"
+        ["nome"] = "Hector Roberto",
+        ["Rua"] = "Teneten Ricardo Guimarães",
+        ["Pais"] = "Brasil"
+    }
 
-   --- Podemos acessar o valor da key desta forma:
-        print(info["nome"])
+    --- Podemos acessar o valor da key desta forma:
+            print(info["nome"])
 
-   --- Ou podemos acessar desta forma:
-        print(info.nome)
+    --- Ou podemos acessar desta forma:
+            print(info.nome)
 ~~~
+
+No caso anterior, poderíamos criar da seguinte forma:
+
+~~~
+ info = 
+    {
+        --- Cria dicionários cujas chaves são "nome", "endereço" e "Pais"
+        Nome = "Hector Roberto",
+        Rua = "Teneten Ricardo Guimarães",
+        Pais = "Brasil"
+    }
+~~~
+
+Dentro dos dicionários, podemos criar outros tipos "tables". Por exemplo:
+
+~~~
+    ultimaCopa = 
+    {
+        ano = 2002,
+        sede = "Japao e Korea do suk",
+        jogadores = 
+        {
+            "Marcos(goleiro)", "Cafu(Capitao)", "Lúcio(Zagueiro)",
+            "Roque Junior(Zagueiro)", "Roberto Carlos(Lateral-Esquerdo)",
+            "Gilberto Silva(Volante)", "Kléberson(Volante)", "Rivaldo(Meio-Campo)",
+            "Ronaldo(Atacante)", "Ronaldinho(Meio-Campo)", "Edmilson(Volante)"
+        }
+
+
+    }
+
+    print(ultimaCopa.jogadores[1])
+
+    --- Para acessar todos os valores do array dentro do dicionários, poderíamos 
+    fazer tb:
+
+    for indice = 1, #ultimaCopa.jogadores do
+        print(ultimaCopa.jogadores[indice])
+    end
+
+~~~
+
+Podemos adicionar novos elementos dentro de um array:
+
+~~~
+
+--- ADicionando um elemento dentro do array jogadores que está dentro do dicionário "ultimaCopa"
+    table.insert(ultimaCopa.jogadores, "Luiz Felipe Scolari(técnico)")
+
+--- Funcao remove
+    table.remove(ultimo, indice)
+    
+~~~
+
+Perceba que usamos **table.insert(ultimaCopa, "nome")**. É interessante que aqui o inset nao pede nenhum valor de index nem nada, é somente uma funcao de dois parâmetros em que o primeiro é o array e o segundo o valor a ser inserido no array(table)
+
+
+
